@@ -1,10 +1,39 @@
 [build-system]
 requires = [
-    "setuptools>=42",
+    "setuptools>=61",
     "setuptools-git-versioning",
-    "wheel"
+    "wheel",
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyfbsdi2c-tspspi"
+version = "0.0.1"
+description = "iic (I2C) ioctl wrapper for FreeBSD"
+requires-python = ">= 3.6"
+authors = [
+    {name = "Thomas Spielauer", email = "pypipackages01@tspi.at"},
+]
+readme = "README.md"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: POSIX :: BSD :: FreeBSD",
+    ]
+dependencies = [
+	"pylabdevs-tspspi >= 0.0.16",
+]
+
+[metadata]
+license-files = "LICENSE.md"
+
+[project.urls]
+Homepage = "https://github.com/tspspi/fbsdi2c"
+
+[tool.setuptools]
+platforms = ["FreeBSD"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools-git-versioning]
 enabled = true
